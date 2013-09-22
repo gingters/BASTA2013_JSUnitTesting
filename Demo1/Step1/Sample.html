@@ -4,9 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Mangled date examples</title>
 	<script>
-	function prettyDate(time){
+	function prettyDate(now, time){
 		var date = new Date(time || ""),
-			diff = ((new Date().getTime() - date.getTime()) / 1000),
+			diff = ((new Date(now).getTime() - date.getTime()) / 1000),
 			day_diff = Math.floor(diff / 86400);
 
 		if (isNaN(day_diff) || day_diff < 0 || day_diff >= 31) {
@@ -28,7 +28,7 @@
 		var links = document.getElementsByTagName("a");
 		for (var i = 0; i < links.length; i++) {
 			if (links[i].title) {
-				var date = prettyDate(links[i].title);
+				var date = prettyDate('2013-08-10T16:45:17Z', links[i].title);
 				if (date) {
 					links[i].innerHTML = date;
 				}
