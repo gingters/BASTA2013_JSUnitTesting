@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prettydate tests</title>
+	<script src="prettydate.js"></script>
+	<script>
+		function test(then, expected) {
+			results.total++;
+
+			var result = prettyDate("2013/09/22 12:00:00Z", then);
+			if (result !== expected) {
+				results.bad++;
+				console.log("Expected " + expected + ", but was " + result);
+			}
+		}
+
+		var results = {
+			total: 0,
+			bad: 0
+		}
+
+		test("2013/09/22 11:59:30Z", "just now");
+		test("2013/09/22 11:59:00Z", "1 minute ago");
+		test("2013/09/22 11:57:00Z", "3 minutes ago");
+		test("2013/09/22 10:59:00Z", "1 hour ago");
+		test("2013/09/22 09:59:00Z", "2 hours ago");
+		test("2013/09/21 12:00:00Z", "Yesterday");
+		test("2013/09/20 12:00:00Z", "2 days ago");
+		test("2013/08/22 12:00:00Z", undefined);
+
+
+		console.log("Of " + results.total + " tests, " + results.bad + " failed, "
+			+ (results.total - results.bad) + " passed.");
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
