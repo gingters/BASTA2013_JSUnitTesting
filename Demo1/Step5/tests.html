@@ -11,7 +11,7 @@
 		test("prettydate basics", function() {
 
 			function testDate(then, expected) {
-				equal(prettyDate("2013-09-22T12:00:00Z", then), expected);
+				equal(prettyDate.format("2013-09-22T12:00:00Z", then), expected);
 			}
 
 			testDate("2013-09-22T11:59:30Z", "just now");
