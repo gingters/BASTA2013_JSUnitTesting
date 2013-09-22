@@ -7,7 +7,7 @@ Person = function(name, lastName, age) {
 
 	return {
 		getName: function() {
-			return 't'+ _name;
+			return _name;
 		},
 
 		getLastName: function() {
