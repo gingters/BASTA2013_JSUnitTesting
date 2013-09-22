@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prettydate tests</title>
+
+	<link rel="stylesheet" href="../../Library/qunit-1.12.0.css" />
+	<script src="../../Library/qunit-1.12.0.js"></script>
+	<script src="prettydate.js"></script>
+	<script>
+
+		test("prettydate basics", function() {
+			var now = "2013-09-22T12:00:00Z";
+
+			equal(prettyDate(now, "2013-09-22T11:59:30Z"), "just now");
+			equal(prettyDate(now, "2013-09-22T11:59:00Z"), "1 minute ago");
+			equal(prettyDate(now, "2013-09-22T11:57:00Z"), "3 minutes ago");
+			equal(prettyDate(now, "2013-09-22T10:59:00Z"), "1 hour ago");
+			equal(prettyDate(now, "2013-09-22T09:59:00Z"), "2 hours ago");
+			equal(prettyDate(now, "2013-09-21T12:00:00Z"), "Yesterday");
+			equal(prettyDate(now, "2013-09-20T12:00:00Z"), "2 days ago");
+			equal(prettyDate(now, "2013-08-22T12:00:00Z"), undefined);
+		});
+	</script>
+
+</head>
+<body>
+<div id="qunit"></div>
+</body>
+</html>
