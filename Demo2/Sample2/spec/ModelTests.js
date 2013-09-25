@@ -1,8 +1,6 @@
 describe('Module Model', function() {
 
-
 	describe('class Person', function(){
-
 
 		describe('method introduce', function() {
 
@@ -16,7 +14,9 @@ describe('Module Model', function() {
 				expect(pers.tellAge()).toBe('I am 93 years old.');
 			});
 
-
+			it('should fail', function() {
+				expect(false).toBeFalsy();
+			});
 
 		});
 

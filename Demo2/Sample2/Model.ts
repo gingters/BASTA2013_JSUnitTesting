@@ -1,5 +1,7 @@
 module Model {
+
 	export class Person {
+
 		private name: string;
 		private lastName: string;
 		private age: number;

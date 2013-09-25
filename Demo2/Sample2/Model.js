@@ -1,5 +1,4 @@
 var Model;
-
 (function (Model) {
     var Person = (function () {
         function Person(name, lastName, yearOfBirth) {

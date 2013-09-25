@@ -35,6 +35,10 @@
 			equal(links[2].innerHTML, "2 days ago");
 		});
 
+
+
+
+
 		test("prettyDate.update, one day later", function() {
 			var links = document.getElementById('qunit-fixture').getElementsByTagName('a');
 			equal(links[0].innerHTML, "September 22th, 2013");
@@ -50,7 +54,8 @@
 
 </head>
 <body>
-<div id="qunit"></div>
+	<div id="qunit"></div>
+
 	<div id="qunit-fixture">
 		<ul>
 			<li class="entry" id="post57">

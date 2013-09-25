@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Mangled date examples</title>
+	<script src="prettydate.js"></script>
+	<script>
+
+	window.onload = function(){
+		var now = "2013-09-25T12:00:00Z";
+		var links = document.getElementsByTagName("a");
+		for (var i = 0; i < links.length; i++) {
+			if (links[i].title) {
+				var date = prettyDate(now, links[i].title);
+				if (date) {
+					links[i].innerHTML = date;
+				}
+			}
+		}
+	};
+	</script>
+</head>
+<body>
+
+<ul>
+<li class="entry" id="post57">
+	<p>blah blah blah…</p>
+	<small class="extra">
+		Posted <a href="/2013/09/blah/57/" title="2013-08-10T15:45:17Z">August 10th, 2013</a>
+		by <a href="/sebastian/">Sebastian Gingter</a>
+	</small>
+</li>
+
+<li class="entry" id="post57">
+	<p>blah blah blah…</p>
+	<small class="extra">
+		Posted <a href="/2013/09/blah/57/" title="2013-09-10T15:45:17Z">September 10th, 2013</a>
+		by <a href="/sebastian/">Sebastian Gingter</a>
+	</small>
+</li>
+
+<li class="entry" id="post57">
+	<p>blah blah blah…</p>
+	<small class="extra">
+		Posted <a href="/2013/09/blah/57/" title="2013-09-22T11:00:17Z">September 22th, 2013</a>
+		by <a href="/sebastian/">Sebastian Gingter</a>
+	</small>
+</li>
+
+<!-- more list items -->
+</ul>
+
+</body>
+</html>
